@@ -1,0 +1,17 @@
+<div class="ui inverted form" >
+  <%= form_for @contact   do |f| %>
+    <div class="field">
+      <%= f.label :name %>
+      <%= f.text_field :name, placeholder:"First Name", autofocus:true %>
+    </div>
+    <div class="field">
+      <%= f.label :last_name %>
+      <%= f.text_field :last_name, placeholder:"Last Name"%>
+    </div>
+    <div class="field">
+      <%= f.label :phone_number%>
+      <%= f.text_field :phone_number, placeholder:"Phone Number"%>
+    </div>
+    <%= f.submit class: "ui submit inverted green button" %>
+  <% end %>
+</div>

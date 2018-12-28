@@ -1,0 +1,11 @@
+<h1 align="center">Create Group</h1>
+<div class="ui form  inverted">
+  <%= form_for @group do |g| %>
+    <div class="field">
+      <%= g.label :name %>
+      <%= g.text_field :name %>
+    </div>
+    <%= g.submit class: "ui submit button"  %>
+  <% end %>
+</div>
+

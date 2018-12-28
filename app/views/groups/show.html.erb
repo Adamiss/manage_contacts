@@ -1,0 +1,13 @@
+<h1 align="center"> Group Name: <%= @group.name %></h1 >
+
+<div class="ui inverted segment">
+  <% @contact_groups.each do |contact| %>
+  <p>
+    Contact:
+    <%= contact.id %>
+  </p>
+  <div class="ui inverted divider"></div>
+  <p></p>
+  <h4 class="ui horizontal inverted divider">//</h4>
+    <% end %>
+</div>

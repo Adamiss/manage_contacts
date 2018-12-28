@@ -1,0 +1,17 @@
+<h1 align="center"> All Groups Listed</h1>
+
+<div class="ui inverted segment">
+  <% @groups.each do |group| %>
+    <p> Category: <%= link_to group.name, group_path(group.id) %> </p>
+    <div class="ui inverted divider"></div>
+    <% @contact_groups.each do |item|%>
+      <p>
+        <% if item.group_id == group.id.to_s %>
+          Contact Name:
+          <%= link_to item.contact.name, contact_path(item.contact.id)%>
+        <% end %>
+    <% end %>
+      </p>
+  <h4 class="ui horizontal inverted divider">//</h4>
+  <% end %>
+</div>

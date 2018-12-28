@@ -1,0 +1,23 @@
+<h1 align="center"> Show contacts of user</h1>
+
+<div class="ui inverted segment">
+  <%= link_to "Create Contact", new_contact_path, class: "ui inverted green basic button" %>
+  <%= link_to "Create Group", new_group_path, class: "ui inverted violet basic button" %>
+</div>
+
+<table class="ui celled inverted table">
+  <thead>
+  <tr><th>First Name</th>
+    <th>Last Name</th>
+    <th>Phone number</th>
+  </tr></thead>
+  <tbody>
+  <% @contacts.each do |contact| %>
+    <tr>
+      <td ><%=link_to contact.name , contact_path(contact) %></td>
+      <td ><%=link_to contact.last_name, contact_path(contact) %></td>
+      <td ><%=link_to contact.phone_number, contact_path(contact) %></td>
+    </tr>
+  <%end %>
+  </tbody>
+</table>

@@ -1,0 +1,28 @@
+<h1 align="center">Contact</h1>
+
+<div class="ui center inverted container">
+  <div class="ui inverted segment">
+    <div class="ui inverted form" >
+      <%= form_for @contact   do |f| %>
+        <div class=" disabled field ">
+          <%= f.label :name, class:"coloredlabel" %>
+          <%= f.text_field :name, class:"coloredtext" %>
+        </div>
+        <div class="disabled field ">
+          <%= f.label :last_name, class:"coloredlabel"%>
+          <%= f.text_field :last_name, placeholder:"Last Name", class:"coloredtext " %>
+        </div>
+        <div class=" disabled field">
+          <%= f.label :phone_number, class:"coloredlabel"%>
+          <%= f.text_field :phone_number, placeholder:"Phone Number", class:"coloredtext" %>
+        </div>
+        <%= link_to "Edit Contact", edit_contact_path,  class: "ui submit inverted green button" %>
+        <%= link_to "Delete Contact", contact_path, method: :delete, class: "ui submit inverted red button",
+                    data: { confirm: "Are you sure you want to delete the article?"} %>
+        <%= link_to "All Contacts", contacts_path,  class: "ui submit inverted violet button" %>
+        </div>
+    <% end %>
+
+
+  </div>
+</div>
