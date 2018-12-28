@@ -2,7 +2,7 @@ class GroupsController < ApplicationController
 
   def index
     @groups = Group.all
-    @contact_groups = ContactGroups.all
+    @contact_groups = ContactGroups.where(:contact_id => current_user.id )
   end
 
   def new
@@ -20,7 +20,7 @@ class GroupsController < ApplicationController
 
   def show
     @group = Group.find(params[:id])
-    @contact_groups = ContactGroups.where(group_id:@group.to_s)
+    @contact_groups = ContactGroups.where(group_id:@group.to_s ) and ContactGroups.where(contact_id: current_user.id.to_s)
   end
 
 end

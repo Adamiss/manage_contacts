@@ -12,11 +12,11 @@
     <th>Phone number</th>
   </tr></thead>
   <tbody>
-  <% @contacts.each do |contact| %>
+  <% @contactgroups.each do |contact| %>
     <tr>
-      <td ><%=link_to contact.name , contact_path(contact) %></td>
-      <td ><%=link_to contact.last_name, contact_path(contact) %></td>
-      <td ><%=link_to contact.phone_number, contact_path(contact) %></td>
+      <td ><%=link_to contact.contact.name , contact_path(contact) %></td>
+      <td ><%=link_to contact.contact.last_name, contact_path(contact) %></td>
+      <td ><%=link_to contact.contact.phone_number, contact_path(contact) %></td>
     </tr>
   <%end %>
   </tbody>

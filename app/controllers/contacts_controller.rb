@@ -2,7 +2,7 @@ class ContactsController <  ApplicationController
 
   before_action :set_contact, only:[:show, :edit, :update, :destroy]
   def index
-    @contacts = Contact.all
+    @contactgroups = ContactGroups.where(:group_id => "3" )
   end
 
   def new
