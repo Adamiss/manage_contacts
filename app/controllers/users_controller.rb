@@ -29,7 +29,7 @@ class UsersController < ApplicationController
     end
   end
 
-  #TODO: Check update User profile
+
   def edit
 
   end

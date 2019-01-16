@@ -8,6 +8,7 @@ class ContactsController <  ApplicationController
 
   def new
     @contact = Contact.new
+    @groups = Group.all
   end
 
   def create
@@ -39,7 +40,6 @@ class ContactsController <  ApplicationController
   end
 
   def destroy
-    #TODO: Check if it is still working
     ContactGroups.where(:contact_id => @contact.id.to_i).destroy_all
     @contact.destroy
     redirect_to contacts_path

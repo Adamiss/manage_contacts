@@ -12,6 +12,19 @@
       <%= f.label :phone_number%>
       <%= f.text_field :phone_number, placeholder:"Phone Number"%>
     </div>
+    <div class="inline fields">
+      <label>Choose a Group</label>
+      <div class="field">
+        <% @groups.each do |group| %>
+          <div class="ui checkbox">
+            <input type="checkbox" name="example">
+            <label><%= group.name %></label>
+          </div>
+        <% end %>
+      </div>
+
+    </div>
     <%= f.submit class: "ui submit inverted green button" %>
+    </div>
   <% end %>
 </div>
