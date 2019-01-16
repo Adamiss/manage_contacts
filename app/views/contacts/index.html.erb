@@ -14,9 +14,9 @@
   <tbody>
   <% @contactgroups.each do |contact| %>
     <tr>
-      <td ><%=link_to contact.contact.name , contact_path(contact) %></td>
-      <td ><%=link_to contact.contact.last_name, contact_path(contact) %></td>
-      <td ><%=link_to contact.contact.phone_number, contact_path(contact) %></td>
+      <td ><%=link_to contact.contact.name , contact_path(contact.contact.id) %></td>
+      <td ><%=link_to contact.contact.last_name, contact_path(contact.contact.id) %></td>
+      <td ><%=link_to contact.contact.phone_number, contact_path(contact.contact.id) %></td>
     </tr>
   <%end %>
   </tbody>

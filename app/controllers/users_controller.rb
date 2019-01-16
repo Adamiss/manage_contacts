@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
 
   before_action :set_user_by_params , only: [:edit, :destroy]
+ # before_action :require_same_user, only: [:edit, :update, :destroy, :show]
 
   def index
 
@@ -16,7 +17,6 @@ class UsersController < ApplicationController
       session[:user_id]= @user.id
       redirect_to root_path
     else
-
     end
   end
 
@@ -26,6 +26,19 @@ class UsersController < ApplicationController
       @user_contacts =@user.contacts
     else
       render'sessions/new'
+    end
+  end
+
+  #TODO: Check update User profile
+  def edit
+
+  end
+
+  def update
+    if @user.update(user_params)
+        redirect_to user_path(current_user)
+    else
+      render 'edit'
     end
   end
 

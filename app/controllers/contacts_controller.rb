@@ -1,6 +1,7 @@
 class ContactsController <  ApplicationController
 
   before_action :set_contact, only:[:show, :edit, :update, :destroy]
+
   def index
     @contactgroups = ContactGroups.where(:group_id => "3" )
   end
@@ -22,6 +23,7 @@ class ContactsController <  ApplicationController
   end
 
   def show
+    @user = User.all
   end
 
   def edit
@@ -36,8 +38,9 @@ class ContactsController <  ApplicationController
   end
 
   def destroy
-    @contact.destroy
+    #TODO: Check if it is still working
     ContactGroups.where(:contact_id => @contact.id.to_i).destroy_all
+    @contact.destroy
     redirect_to contacts_path
   end
 
