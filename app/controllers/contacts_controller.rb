@@ -12,7 +12,7 @@ class ContactsController <  ApplicationController
 
   def create
     @contact = Contact.new(contact_params)
-    @contact.user = current_user
+    @contact.user_id = current_user.id
     if @contact.save
       flash[:success] = "You have successfully login"
       redirect_to contact_path(@contact)
@@ -24,6 +24,7 @@ class ContactsController <  ApplicationController
 
   def show
     @user = User.all
+    @current_user = current_user
   end
 
   def edit
